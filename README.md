@@ -51,11 +51,12 @@ A complete health-tracking web app built with **React + FastAPI + PostgreSQL**, 
 ---
 
 ## 📦 Folder Structure
-
+```bash
 women-health/
 │── health-tracker-frontend/
 │── health-tracker-backend/
 │── README.md
+```
 
 
 ---
@@ -68,21 +69,22 @@ women-health/
 cd health-tracker-backend
 pip install -r requirements.txt
 uvicorn app.main:app --reload
+```
 Backend runs on:
 
 http://localhost:8000
-```
+
 ### **2. Frontend Setup**
 ```bash
 cd health-tracker-frontend
 npm install
 npm run dev
 
-
+```
 Frontend runs on:
 
 http://localhost:5173
-```
+
 
 🗄 Database
 
@@ -99,7 +101,12 @@ Symptoms
 
 AI Insights
 
+### **Future Enhancements**
+mobile app version
+Advanced Ml-based predictions
+Doctor consultation & reports 
+Data visualizations & analytics
 
-💖 Author
 
+### **💖 Author**
 Built with love by Spoorthi ✨
