@@ -13,12 +13,7 @@ app = FastAPI(
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://192.168.1.7:5173"
-    ],
-    # For dev, you COULD do allow_origins=["*"], but current is safer.
+    allow_origins=settings.cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -27,9 +22,11 @@ app.add_middleware(
 # Include API router
 app.include_router(api_router, prefix=settings.API_V1_PREFIX)
 
+
 @app.get("/")
 def root():
     return {"message": "Welcome to Health Tracker API"}
+
 
 @app.get("/health")
 def health_check():
