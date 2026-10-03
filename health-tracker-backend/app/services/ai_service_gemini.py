@@ -1,4 +1,4 @@
-import google.generativeai as genai
+from google import genai
 from datetime import timedelta, date
 from typing import Dict
 from sqlalchemy.orm import Session
@@ -16,10 +16,9 @@ from app.models.models import (
 class AIService:
     def __init__(self):
         if not settings.GEMINI_API_KEY:
-            raise RuntimeError("❌ GEMINI_API_KEY not set")
+          raise RuntimeError("❌ GEMINI_API_KEY not set")
 
-        genai.configure(api_key=settings.GEMINI_API_KEY)
-        self.model = genai.GenerativeModel("models/gemini-2.5-flash")
+        self.client = genai.Client(api_key=settings.GEMINI_API_KEY)
 
     # -------------------------------------------------
     # Helpers
@@ -132,7 +131,10 @@ Instructions:
 - Suggest doctor visit only if needed
 """
 
-        response = self.model.generate_content(prompt)
+        response = self.client.models.generate_content(
+    model="gemini-3.8-flash",
+    contents=prompt,
+)
         insight_text = response.text.strip()
 
         db.add(
@@ -169,7 +171,10 @@ Rules:
 - NO medical diagnosis
 """
 
-        response = self.model.generate_content(prompt)
+        response = self.client.models.generate_content(
+    model="gemini-3.8-flash",
+    contents=prompt,
+)
         return response.text.strip()
 
     async def predict_next_cycle(
@@ -210,7 +215,10 @@ Explain this gently and clearly.
 """
 
         try:
-            analysis = self.model.generate_content(prompt).text.strip()
+            analysis =self.client.models.generate_content(
+    model="gemini-3.8-flash",
+    contents=prompt,
+).text.strip()
         except Exception:
             analysis = "Prediction based on average cycle length."
 

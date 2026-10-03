@@ -1,13 +1,11 @@
-import google.generativeai as genai
+from google import genai
 from app.core.config import settings
 
-genai.configure(api_key=settings.GEMINI_API_KEY)
+client = genai.Client(api_key=settings.GEMINI_API_KEY)
 
-# ✅ Use a confirmed text-capable model
-model = genai.GenerativeModel("models/gemini-pro-latest")
-
-response = model.generate_content(
-    "Give short health advice related to menstrual cycle tracking."
+response = client.models.generate_content(
+    model="gemini-3.8-flash",
+    contents="Give short health advice related to menstrual cycle tracking."
 )
 
 print("\n✅ Gemini response:\n")
