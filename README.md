@@ -1,112 +1,118 @@
-# 🌸 Women Health Tracker – Full Stack Application
+# 🌸 Women Health Tracker
 
-A complete health-tracking web app built with **React + FastAPI + PostgreSQL**, focused on women’s cycle tracking, symptoms logging, hormonal insights, and AI-powered predictions.
+A full-stack women’s health tracking application built with **React, FastAPI, and PostgreSQL**. The application helps users track menstrual cycles, log symptoms, view health insights, and receive AI-powered analysis.
 
 ---
 
-## 🚀 Features
+## ✨ Features
 
 ### 🔴 Cycle Tracking
-- Add and track menstrual cycles  
-- Predict next period  
-- Predict ovulation & fertile window  
-- Visual calendar highlights  
-- Cycle history & insights  
 
-### 🩺 Symptoms Logging
-- Log daily symptoms  
-- View trends  
-- Manage symptom history  
+- Add and track menstrual cycles
+- Calculate average cycle length
+- Predict upcoming periods
+- Predict ovulation date
+- Calculate fertile window
+- View cycle history
+- Calendar-based cycle visualization
 
-### 🤖 AI Insights (Gemini)
-- Analyze symptoms  
-- Provide hormonal imbalance risk  
-- Cycle prediction models  
-- Intelligent summaries  
+### 🩺 Symptom Tracking
+
+- Log daily symptoms
+- Track symptom history
+- View symptoms associated with cycles
+- Analyze recurring symptoms
+
+### 🧠 Health & Hormonal Insights
+
+- PCOS risk assessment
+- Hormonal health information
+- Health-related insights based on user data
+- Risk scoring
+
+### 🤖 AI-Powered Insights
+
+Powered by **Google Gemini API**.
+
+- Analyze logged symptoms
+- Generate personalized health insights
+- Provide cycle-related analysis
+- Generate intelligent summaries
+- Predict upcoming cycle information
+
+> AI-generated information is intended for educational purposes and should not be treated as a medical diagnosis.
 
 ### 🔐 Authentication
-- JWT-based secure login/register  
-- User-specific data storage  
+
+- User registration
+- User login
+- JWT-based authentication
+- Protected routes
+- User-specific health data
 
 ---
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
-### **Frontend**
-- React + Vite  
-- Axios  
-- React Calendar  
-- Context API Auth  
+### Frontend
 
-### **Backend**
-- FastAPI  
-- SQLAlchemy  
-- PostgreSQL  
-- JWT Auth  
+- React
+- Vite
+- Axios
+- React Router
+- React Calendar
+- Context API
+- JavaScript
+- CSS
 
-### **AI Layer**
-- Google Gemini API  
-- Custom risk scoring models  
+### Backend
+
+- FastAPI
+- Python
+- SQLAlchemy
+- PostgreSQL
+- Pydantic
+- JWT Authentication
+- Uvicorn
+
+### AI
+
+- Google Gemini API
+- Custom health-risk scoring
+- AI-powered symptom and cycle analysis
+
+### Development Tools
+
+- Git
+- GitHub
+- VS Code
+- Postman
+- PostgreSQL
 
 ---
 
-## 📦 Folder Structure
-```bash
+## 📁 Project Structure
+
+```text
 women-health/
-│── health-tracker-frontend/
-│── health-tracker-backend/
-│── README.md
-```
-
-
----
-
-## ▶️ Running the Project
-
-### **1. Backend Setup**
-
-```bash
-cd health-tracker-backend
-pip install -r requirements.txt
-uvicorn app.main:app --reload
-```
-Backend runs on:
-
-http://localhost:8000
-
-### **2. Frontend Setup**
-```bash
-cd health-tracker-frontend
-npm install
-npm run dev
-
-```
-Frontend runs on:
-
-http://localhost:5173
-
-
-🗄 Database
-
-Project uses PostgreSQL.
-Tables include:
-
-Users
-
-User Profiles
-
-Cycles
-
-Symptoms
-
-AI Insights
-
-### **Future Enhancements**
-mobile app version
-Advanced Ml-based predictions
-Doctor consultation & reports 
-Data visualizations & analytics
-
-
-### **💖 Author**
-Built with love by Spoorthi ✨
+│
+├── health-tracker-frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   └── ...
+│   ├── package.json
+│   └── vite.config.js
+│
+├── health-tracker-backend/
+│   ├── app/
+│   │   ├── api/
+│   │   ├── models/
+│   │   ├── services/
+│   │   └── ...
+│   ├── requirements.txt
+│   └── ...
+│
+├── .gitignore
+└── README.md
